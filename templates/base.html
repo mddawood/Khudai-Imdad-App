@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="{% static 'assets/img/logo.svg' %}" alt="" /> Khudai Imdad</a>
+                <a class="navbar-brand js-scroll-trigger" href="{% url "home" %}"><img src="{% static 'assets/img/logo.svg' %}" alt="" /> Khudai Imdad</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -30,7 +30,7 @@
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Cases</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'team:m_list' %}">Team</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -39,9 +39,7 @@
         <!-- Masthead-->
         <header class="masthead" style="background-image: url('{% static 'assets/img/header-bg1.jpg' %}')">
             <div class="container">
-                <div class="masthead-subheading">Welcome to our website</div>
-                <div class="masthead-heading text-uppercase">Let's make the world a better place!</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">Read our Story!</a>
+                <div class="masthead-subheading">"If we have no peace, it is because we have forgotten that we belong to each other." <br><br>~ Mother Teresa</div>
             </div>
         </header>
 

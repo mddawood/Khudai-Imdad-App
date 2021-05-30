@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'team',
     'cases',
     'bootstrap4',
-    'pillow',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +124,7 @@ USE_TZ = True
 # base url to serve media files
 MEDIA_URL = '/media/'
 #path where media is sored
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Static files (CSS, JavaScript, Images)
