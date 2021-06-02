@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    # path('cases/', include("cases.urls", namespace="cases")),
+    path('cases/', include("cases.urls", namespace="cases")),
     path('team/', include("team.urls", namespace="team")),
     path('admin/', admin.site.urls),
 ]

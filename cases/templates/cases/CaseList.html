@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <!-- Portfolio Grid-->
+  <section class="page-section bg-light" id="portfolio">
+      <div class="container">
+          <div class="text-center">
+              <h2 class="section-heading text-uppercase">Cases</h2>
+              <h3 class="section-subheading text-muted">The list of relief work we've done so far</h3>
+          </div>
+
+          {% if user.is_authenticated %}
+          <div class="CaseButtonContainer">
+            <div class="ButtonCenter">
+                <a href="{% url 'cases:c_create' %}"><button type="button" class="btn btn-success">Add Case</button></a>
+            </div>
+          </div>
+          {% endif %}
+
+          {% if cases %}
+          <div class="row">
+              {% for case in cases %}
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            {% if case.img %}
+                              <img class="img-fluid" src="{{case.img.url}}" alt="" />
+                            {% else %}
+                              <img class="img-fluid" src="{% static 'assets/img/logo.svg' %}" alt="" />
+                            {% endif %}
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Receiver name: {{case.receiver_name}}</div>
+                            <div class="portfolio-caption-subheading text-muted">Date: {{case.date}}</div>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'cases:c_update' pk=case.pk %}"><button type="button" class="btn btn-primary">Update</button></a>
+                            <a href="{% url 'cases:c_delete' pk=case.pk %}"><button type="button" class="btn btn-danger">Delete</button></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+          </div>
+          {% else %}
+          <div class="card">
+            <div class="card-body">
+              No cases yet
+            </div>
+          </div>
+          {% endif %}
+      </div>
+  </section>
+
+{% endblock %}
