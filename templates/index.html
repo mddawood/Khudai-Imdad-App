@@ -12,7 +12,7 @@
         </div>
         <ul class="timeline">
             <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="" /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/1.jpg' %}" alt="" /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>February 2020</h4>
@@ -22,7 +22,7 @@
                 </div>
             </li>
             <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="" /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/2.jpg' %}" alt="" /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>22nd March, 2020</h4>
@@ -32,7 +32,7 @@
                 </div>
             </li>
             <li>
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="" /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/3.jpg' %}" alt="" /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>June 8th, 2020</h4>
@@ -42,7 +42,7 @@
                 </div>
             </li>
             <li class="timeline-inverted">
-                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" /></div>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'assets/img/about/4.jpg' %}" alt="" /></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4>And Today!</h4>
@@ -64,7 +64,5 @@
         </ul>
     </div>
 </section>
-
-{% include 'contact.html' %}
 
 {% endblock %}

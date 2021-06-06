@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (ListView, CreateView, UpdateView, DeleteView)
+from django.views.generic import (ListView, CreateView, UpdateView, DeleteView, DetailView)
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from . models import Case, Image
@@ -9,6 +9,11 @@ class CaseListView(ListView):
     context_object_name = 'cases'
     model = Case
     template_name = 'cases/CaseList.html'
+
+class CaseDetailView(DetailView):
+    context_object_name = 'case'
+    model = Case
+    template_name = 'cases/CaseDetail.html'
 
 class CaseCreateView(LoginRequiredMixin, CreateView):
     fields = ("img", "receiver_name", "description", "date")

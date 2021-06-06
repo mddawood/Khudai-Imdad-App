@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  {% if case.img %}
+    <img class="img-fluid" src="{{case.img.url}}" alt="case_img" />
+  {% else %}
+    <img class="img-fluid" src="{% static 'assets/img/logo.svg' %}" alt="case_img" />
+  {% endif %}
+  <h1>Receiver name: {{case.receiver_name}}</h1>
+  <p>{{case.description}}</p>
+  <h6>Date: {{case.date}}</h6>
+</div>
+
+{% endblock %}
